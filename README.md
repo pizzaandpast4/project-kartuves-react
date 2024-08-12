@@ -1,8 +1,73 @@
-# React + Vite
+![Gluten Status](https://img.shields.io/badge/Gluten-Free-green.svg)
+![Eco Status](https://img.shields.io/badge/ECO-Friendly-green.svg)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Hangman
 
-Currently, two official plugins are available:
+React student project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<br>
+
+## 🌟 About
+
+This project is for educational porpuses only. Pull request are welcome, but priority for project authors! Thank you for your cooperation!
+
+Site published at: https://pizzaandpast4.github.io/project-kartuves-react/
+
+## 🎯 Project features/goals
+
+-   Github pages
+-   React
+-   **NO** design
+
+## 🧰 Getting Started
+
+### 💻 Prerequisites
+
+Node.js - _download and install_
+
+```
+https://nodejs.org
+```
+
+Git - _download and install_
+
+```
+https://git-scm.com
+```
+
+### 🏃 Run locally
+
+Would like to run this project locally? Open terminal and follow these steps:
+
+1. Clone the repo
+    ```sh
+    git clone https://pizzaandpast4.github.io/project-kartuves-react/.git
+    ```
+2. Install NPM packages
+    ```sh
+    npm i
+    ```
+    or
+    ```sh
+    npm install
+    ```
+3. Run the server
+    ```sh
+    npm run dev
+    ```
+
+### 🧪 Running tests
+
+There is no tests for this project.
+
+## 🎅 Authors
+
+[Github](https://github.com/pizzaandpast4)
+
+## ⚠️ License
+
+Distributed under the ISC License. See LICENSE.txt for more information.
+
+## 🔗 Other resources
+
+No other resources.
