@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Header } from './components/header/Header'
+import { Footer } from './components/footer/Footer'
 import './App.css'
 
 function App() {
@@ -7,19 +8,16 @@ function App() {
 
   return (
     <>
-
       <Header />
-      <div className="card">
+      <main className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      </main>
+      <Footer />
     </>
   )
 }
