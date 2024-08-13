@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { Header } from './components/header/Header'
 import { Footer } from './components/footer/Footer'
+import { randomWord } from './components/wordgenerator/WordGenerator'
 import './App.css'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,7 +16,7 @@ function App() {
           count is {count}
         </button>
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+          {randomWord}
         </p>
       </main>
       <Footer />
