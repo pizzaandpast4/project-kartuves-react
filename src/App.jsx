@@ -46,7 +46,11 @@ const App = () => {
         <div>
           {word}
         </div>
-       
+
+        <div>
+        <p>Lives: {lives - wrongGuesses}</p>
+        <p>Wins: {wins} | Losses: {losses}</p>
+      </div>
       </main>
       <Footer />
     </>
