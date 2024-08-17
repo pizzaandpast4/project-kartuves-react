@@ -45,8 +45,20 @@ const App = () => {
       if (!word.includes(letter)) {
         setWrongGuesses(wrongGuesses + 1);
       }
+      checkGameStatus();
     }
-  }
+  };
+
+  const checkGameStatus = () => {
+    if (wrongGuesses + 1 >= lives) {
+      setGameOver(true);
+      setLosses(losses + 1);
+    }
+    if (word.split('').every(letter => guessedLetters.includes(letter))) {
+      setGameWon(true);
+      setWins(wins + 1);
+    }
+  };
 
   const handleKeyPress = (event) => {
     const letter = event.key.toLowerCase();
