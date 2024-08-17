@@ -46,8 +46,14 @@ const App = () => {
         setWrongGuesses(wrongGuesses + 1);
       }
     }
-  };
+  }
 
+  const handleKeyPress = (event) => {
+    const letter = event.key.toLowerCase();
+    if (/[a-z]/.test(letter)) {
+      handleGuess(letter);
+    }
+  }
 
   return (
     <>
@@ -58,7 +64,7 @@ const App = () => {
         </div>
 
         <div>
-          {Keyboard()}
+          
         </div>
 
         <div>
