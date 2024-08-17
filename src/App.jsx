@@ -5,7 +5,7 @@ import { randomWord } from './components/wordgenerator/WordGenerator'
 import './App.css'
 
 
-function App() {
+const App = () => { 
   const [word, setWord] = useState('');
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [wrongGuesses, setWrongGuesses] = useState(0);
@@ -13,17 +13,30 @@ function App() {
   const [gameWon, setGameWon] = useState(false);
   const [wins, setWins] = useState(0);
   const [losses, setLosses] = useState(0);
+  const [lives, setLives] = useState(6);
 
   useEffect(() => {
     startNewGame();
   }, []);
 
-  function startNewGame() {
+   useEffect(() => {
+    if (wrongGuesses >= lives) {
+      setGameOver(true);
+      setLosses(losses + 1);
+    }
+    if (word.split('').every(letter => guessedLetters.includes(letter))) {
+      setGameWon(true);
+      setWins(wins + 1);
+    }
+  }, [wrongGuesses, guessedLetters, word, lives, losses, wins]);
+
+  const startNewGame = () => {
     setWord(randomWord);
     setGuessedLetters([]);
     setWrongGuesses(0);
     setGameOver(false);
     setGameWon(false);
+    setLives(6);
   }
 
   return (
@@ -33,6 +46,7 @@ function App() {
         <div>
           {word}
         </div>
+       
       </main>
       <Footer />
     </>
