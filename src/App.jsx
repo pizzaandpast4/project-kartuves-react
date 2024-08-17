@@ -39,6 +39,16 @@ const App = () => {
     setLives(6);
   }
 
+  const handleGuess = (letter) => {
+    if (!guessedLetters.includes(letter) && !gameOver && !gameWon) {
+      setGuessedLetters([...guessedLetters, letter]);
+      if (!word.includes(letter)) {
+        setWrongGuesses(wrongGuesses + 1);
+      }
+    }
+  };
+
+
   return (
     <>
       <Header />
@@ -48,8 +58,12 @@ const App = () => {
         </div>
 
         <div>
-        <p>Lives: {lives - wrongGuesses}</p>
-        <p>Wins: {wins} | Losses: {losses}</p>
+          {Keyboard()}
+        </div>
+
+        <div>
+          <p>Lives: {lives - wrongGuesses}</p>
+          <p>Wins: {wins} | Losses: {losses}</p>
       </div>
       </main>
       <Footer />
