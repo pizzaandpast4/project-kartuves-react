@@ -65,6 +65,14 @@ const App = () => {
     }
   }, [guessedLetters, wrongGuesses]); 
 
+   const handleKeyPress = (event) => {
+    const letter = event.key.toLowerCase();
+    if (/[a-z]/.test(letter)) {
+      handleGuess(letter);
+    }
+  };
+
+
   return (
     <>
       <Header />
