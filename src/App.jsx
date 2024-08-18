@@ -72,6 +72,15 @@ const App = () => {
     }
   };
 
+   const renderWord = () => {
+    return word.split('').map((letter, index) => (
+      <span key={index} style={{ margin: '0 5px' }}>
+        {guessedLetters.includes(letter) ? letter : '_'}
+      </span>
+    ));
+  };
+
+
 
   return (
     <>
@@ -81,8 +90,8 @@ const App = () => {
           {word}
         </div>
 
-        <div>
-          
+        <div style={{ fontSize: '24px', margin: '20px' }}>
+        {renderWord()}
         </div>
 
         <div>
