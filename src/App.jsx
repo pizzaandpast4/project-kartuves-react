@@ -41,31 +41,29 @@ const App = () => {
 
   const handleGuess = (letter) => {
     if (!guessedLetters.includes(letter) && !gameOver && !gameWon) {
-      setGuessedLetters([...guessedLetters, letter]);
+      setGuessedLetters((prev) => [...prev, letter]);
       if (!word.includes(letter)) {
-        setWrongGuesses(wrongGuesses + 1);
+        setWrongGuesses((prev) => prev + 1);
       }
-      checkGameStatus();
     }
   };
 
   const checkGameStatus = () => {
-    if (wrongGuesses + 1 >= lives) {
+    if (wrongGuesses >= lives) {
       setGameOver(true);
-      setLosses(losses + 1);
+      setLosses((prev) => prev + 1);
     }
     if (word.split('').every(letter => guessedLetters.includes(letter))) {
       setGameWon(true);
-      setWins(wins + 1);
+      setWins((prev) => prev + 1);
     }
   };
 
-  const handleKeyPress = (event) => {
-    const letter = event.key.toLowerCase();
-    if (/[a-z]/.test(letter)) {
-      handleGuess(letter);
+  useEffect(() => {
+    if (guessedLetters.length > 0) {
+      checkGameStatus();
     }
-  }
+  }, [guessedLetters, wrongGuesses]); 
 
   return (
     <>
