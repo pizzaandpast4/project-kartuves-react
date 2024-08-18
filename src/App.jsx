@@ -80,6 +80,23 @@ const App = () => {
     ));
   };
 
+   const renderKeyboard = () => {
+    return Array.from('abcdefghijklmnopqrstuvwxyz').map((letter) => (
+      <button
+        key={letter}
+        onClick={() => handleGuess(letter)}
+        disabled={guessedLetters.includes(letter) || gameOver || gameWon}
+        style={{
+          backgroundColor: guessedLetters.includes(letter) && !word.includes(letter) ? 'red' : 
+                          guessedLetters.includes(letter) && word.includes(letter) ? 'green' : '',
+        }}
+      >
+        {letter}
+      </button>
+    ));
+  };
+
+
 
 
   return (
@@ -90,14 +107,17 @@ const App = () => {
           {word}
         </div>
 
-        <div style={{ fontSize: '24px', margin: '20px' }}>
-        {renderWord()}
-        </div>
-
         <div>
           <p>Lives: {lives - wrongGuesses}</p>
           <p>Wins: {wins} | Losses: {losses}</p>
       </div>
+      <div style={{ fontSize: '24px', margin: '20px' }}>
+        {renderWord()}
+      </div>
+      <div>
+        {renderKeyboard()}
+      </div>
+
       </main>
       <Footer />
     </>
