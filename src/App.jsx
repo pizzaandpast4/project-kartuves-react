@@ -90,15 +90,26 @@ useEffect(() => {
     };
   }, [guessedLetters, gameOver, gameWon]);
 
+  const renderHangman = () => {
+    return (
+      <img
+        src={`./src/assets/img/hangman-${wrongGuesses}.jpg`}
+        alt={`hangman stage ${wrongGuesses}`}
+        style={{ width: '200px', margin: '20px' }}
+      />
+    );
+  };
+
   return (
     <>
       <Header />
       <main>
         <div>
           <p>Lives left: {lives - wrongGuesses}</p>
-          <p>{wrongGuesses > 0 && `Lives lost: ${wrongGuesses}`}</p>
+          <p>Lives lost: {wrongGuesses}</p>
           <p>Wins: {wins} | Losses: {losses}</p>
-      </div>
+        </div>
+      {renderHangman()}
       <div style={{ fontSize: '24px', margin: '20px' }}>
         {renderWord()}
       </div>
