@@ -14,21 +14,24 @@ const App = () => {
   const [wins, setWins] = useState(0);
   const [losses, setLosses] = useState(0);
   const [lives, setLives] = useState(6);
+  const [gameStarted, setGameStarted] = useState(false);
 
   useEffect(() => {
   startNewGame();
 }, []);
 
 useEffect(() => {
-  if (wrongGuesses >= lives) {
-    setGameOver(true);
-    setLosses((prev) => prev + 1);
-  }
-  if (word.split('').every((letter) => guessedLetters.includes(letter))) {
-    setGameWon(true);
-    setWins((prev) => prev + 1);
-  }
-}, [wrongGuesses, guessedLetters, word, lives]);
+    if (gameStarted) { 
+      if (wrongGuesses >= lives) {
+        setGameOver(true);
+        setLosses((prev) => prev + 1);
+      }
+      if (word.split('').every((letter) => guessedLetters.includes(letter))) {
+        setGameWon(true);
+        setWins((prev) => prev + 1);
+      }
+    }
+  }, [wrongGuesses, guessedLetters, word, lives, gameStarted]);
 
   const startNewGame = () => {
     setWord(randomWord());
@@ -37,6 +40,7 @@ useEffect(() => {
     setGameOver(false);
     setGameWon(false);
     setLives(6);
+    setGameStarted(true);
   }
 
   const handleGuess = (letter) => {
