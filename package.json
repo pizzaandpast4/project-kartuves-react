@@ -1,7 +1,7 @@
 {
   "homepage": "https://github.com/pizzaandpast4/project-kartuves-react",
   "name": "project-kartuves-react",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
