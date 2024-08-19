@@ -31,14 +31,12 @@ useEffect(() => {
 }, [wrongGuesses, guessedLetters, word, lives]);
 
   const startNewGame = () => {
-    setWord(randomWord);
+    setWord(randomWord());
     setGuessedLetters([]);
     setWrongGuesses(0);
     setGameOver(false);
     setGameWon(false);
     setLives(6);
-    setWins(0);
-    setLosses(0);
   }
 
   const handleGuess = (letter) => {
@@ -114,7 +112,7 @@ useEffect(() => {
       <main>
 
         <div>
-          <p>Lives: {lives - wrongGuesses}</p>
+          <p>Lives left: {lives - wrongGuesses}</p>
           <p>{wrongGuesses > 0 && `Lives lost: ${wrongGuesses}`}</p>
           <p>Wins: {wins} | Losses: {losses}</p>
       </div>
