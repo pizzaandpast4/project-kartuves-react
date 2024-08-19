@@ -95,7 +95,7 @@ useEffect(() => {
       <img
         src={`./src/assets/img/hangman-${wrongGuesses}.jpg`}
         alt={`hangman stage ${wrongGuesses}`}
-        style={{ width: '200px', margin: '20px' }}
+        style={{ width: '200px', margin: '10px' }}
       />
     );
   };
@@ -116,13 +116,13 @@ useEffect(() => {
       <div>
         {renderKeyboard()}
       </div>
- {gameOver && (
+        {gameOver && (
         <div>
           <h2>You lost! The word was: {word}</h2>
           <button onClick={startNewGame}>Start a new game</button>
         </div>
       )}
-      {gameWon && (
+        {gameWon && (
         <div>
           <h2>You won! The word was: {word}</h2>
           <button onClick={startNewGame}>Start a new game</button>
