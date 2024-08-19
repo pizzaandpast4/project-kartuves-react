@@ -94,7 +94,6 @@ useEffect(() => {
     <>
       <Header />
       <main>
-
         <div>
           <p>Lives left: {lives - wrongGuesses}</p>
           <p>{wrongGuesses > 0 && `Lives lost: ${wrongGuesses}`}</p>
