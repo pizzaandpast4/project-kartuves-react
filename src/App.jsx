@@ -48,24 +48,6 @@ useEffect(() => {
   }
 };
 
-const checkGameStatus = () => {
-  if (wrongGuesses >= lives) {
-    setGameOver(true);
-    setLosses((prev) => prev + 1);
-  }
-  if (word && word.split('').every(letter => guessedLetters.includes(letter))) {
-    setGameWon(true);
-    setWins((prev) => prev + 1);
-  }
-};
-
-useEffect(() => {
-  if (!gameOver && !gameWon) { 
-    checkGameStatus();
-  }
-}, [guessedLetters, wrongGuesses, word]); 
-
-
    const handleKeyPress = (event) => {
     const letter = event.key.toLowerCase();
     if (/[a-z]/.test(letter)) {
@@ -103,8 +85,6 @@ useEffect(() => {
       window.removeEventListener('keydown', handleKeyPress);
     };
   }, [guessedLetters, gameOver, gameWon]);
-
-
 
   return (
     <>
