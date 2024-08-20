@@ -41,7 +41,7 @@ Would like to run this project locally? Open terminal and follow these steps:
 
 1. Clone the repo
     ```sh
-    git clone https://pizzaandpast4.github.io/project-kartuves-react/.git
+    git clone https://github.com/pizzaandpast4/project-kartuves-react .
     ```
 2. Install NPM packages
     ```sh
@@ -55,6 +55,7 @@ Would like to run this project locally? Open terminal and follow these steps:
     ```sh
     npm run dev
     ```
+4. Open the link from the terminal
 
 ### 🧪 Running tests
 
